@@ -22,3 +22,15 @@
         register: python_path
       - debug:
           msg: "{{ python_path }}"
+
+      - name: netstat info
+        shell: netstat -na
+        register: netstat
+      - debug:
+          msg: "{{ netstat }}"
+
+      - name: wget info
+        shell: wget http://google.com
+        register: wget_proxy
+      - debug:
+          msg: "{{ wget_proxy }}"
