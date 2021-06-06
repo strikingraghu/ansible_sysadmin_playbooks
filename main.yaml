@@ -24,7 +24,7 @@
           msg: "{{ python_path }}"
 
       - name: wget info
-        get_url: url=http://google.com
+        get_url: url=http://google.com dest=/tmp
         register: wget_proxy
       - debug:
           msg: "{{ wget_proxy }}"
