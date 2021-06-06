@@ -1,0 +1,24 @@
+# generic commands execution
+---
+  - hosts: localhost
+    connection: local
+    gather_facts: true
+
+    tasks:
+      - name: print hostname
+        shell: hostname
+        register: hostname
+      - debug:
+          msg: "{{ hostname }}"
+
+      - name: print pwd
+        shell: pwd
+        register: pwd
+      - debug:
+          msg: "{{ pwd }}"
+
+      - name: python info
+        shell: which python
+        register: python_path
+      - debug:
+          msg: "{{ python_path }}"
