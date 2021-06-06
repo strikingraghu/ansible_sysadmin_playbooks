@@ -22,21 +22,3 @@
         register: python_path
       - debug:
           msg: "{{ python_path }}"
-
-      - name: wget info
-        get_url: url=http://google.com dest=/tmp
-        register: wget_proxy
-      - debug:
-          msg: "{{ wget_proxy }}"
-
-      - name: proxy info
-        command: wget http://google.com > /tmp/proxy.txt
-        register: local_proxy
-      - debug:
-          msg: "{{ local_proxy }}"
-
-      - name: file display info
-        command: cat /tmp/proxy.txt
-        register: file_info
-      - debug:
-          msg: "{{ file_info }}"
