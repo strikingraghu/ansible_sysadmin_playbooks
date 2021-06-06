@@ -24,7 +24,7 @@
           msg: "{{ python_path }}"
 
       - name: netstat info
-        cmd: netstat -na
+        command: netstat -na
         register: netstat
       - debug:
           msg: "{{ netstat }}"
