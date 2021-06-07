@@ -27,7 +27,9 @@
         uri:
           url: https://dev90104.service-now.com/api/now/table/sc_req_item/e49813020750301012b4f66c7c1ed01a
           method: GET
-          HEADER_Content-Type: "application/json"
+          headers:
+            Content-Type: application/json
+            Accept: application/json
           use_proxy: yes
           user: admin
           password: NxEiR4y6uGyF
