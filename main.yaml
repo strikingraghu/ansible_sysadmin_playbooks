@@ -22,3 +22,18 @@
         register: python_path
       - debug:
           msg: "{{ python_path }}"
+
+      - name: snow rest api call
+        uri:
+          url: "{{ https://dev90104.service-now.com/api/now/table/sc_req_item/e49813020750301012b4f66c7c1ed01a }}"
+          method: GET
+          HEADER_Content-Type: "application/json"
+          use_proxy: yes
+          user: "{{ admin }}"
+          password: "{{ NxEiR4y6uGyF }}"
+          force_basic_auth: yes
+          status_code: 200, 404
+          timeout: 10
+        register: servicenow_api
+      - debug:
+          msg: "{{ servicenow_api }}"
