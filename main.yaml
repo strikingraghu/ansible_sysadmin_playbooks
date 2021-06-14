@@ -25,18 +25,20 @@
 
       - name: snow rest api call
         uri:
-          url: https://dev90104.service-now.com/api/now/table/sc_req_item/e49813020750301012b4f66c7c1ed01a
+          url: <URL>
           method: GET
           headers:
             Content-Type: application/json
             Accept: application/json
           use_proxy: yes
-          user: admin
-          password: NxEiR4y6uGyF
+          user: <>
+          password: <>
           force_basic_auth: yes
           status_code: 200, 404
           timeout: 10
           validate_certs: false
         register: servicenow_api
+        environment:
+          https_proxy: "{{ gblproxy }}"
       - debug:
           msg: "{{ servicenow_api }}"
